@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Приложение для получения списка GitHub репозиториев
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **Создание приложения**: Приложение создано с использованием Vite, React, SWC и TypeScript.
 
-Currently, two official plugins are available:
+2. **Запуск приложения**:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   - Склонируйте репозиторий.
+   - В терминале выполните команды:
+     ```bash
+     npm install
+     npm run dev
+     ```
 
-## Expanding the ESLint configuration
+3. **Хранение состояния**: Для управления состоянием используется MobX.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+4. **UI-фреймворк**: В качестве UI-фреймворка используется Ant Design.
 
-- Configure the top-level `parserOptions` property like this:
+5. **Фильтрация репозиториев**: Для фильтрации репозиториев используются параметры:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   - **search**: текст для поиска.
+   - **sort**: критерий сортировки (по звёздам, по ответвлениям, по дате обновления).
+   - **order**: порядок сортировки (возрастание или убывание).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+6. **Пагинация**: Данные загружаются постепенно, когда пользователь прокручивает страницу до конца списка. Это позволяет эффективно загружать и отображать репозитории.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+7. **Тестирование**: Приложение протестировано с использованием Jest и React Testing Library.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+8. **Запуск тестов**:
+
+   - Для запуска всех тестов используйте команду:
+     ```bash
+     npm test
+     ```
+   - Если нужно протестировать конкретный файл, выполните:
+     ```bash
+     npm test "имя_файла"
+     ```
+
+9. **Увеличение лимита запросов**: Если вам необходимо увеличить лимит запросов, вы можете вставить свой токен в файл `.env`. Замените строку:
+
+   ```plaintext
+   VITE_GITHUB_TOKEN = GITHUB_TOKEN
+   ```
+
+   на:
+
+   ```plaintext
+   VITE_GITHUB_TOKEN = token ${token}
+   ```
+
+10. **Архитектура приложения**: Архитектура приложения позволяет легко расширять функционал и понятно организовывать структуру файлов, что упрощает поиск и модификацию различных функциональностей.
+
+---
