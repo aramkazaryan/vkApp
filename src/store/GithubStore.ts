@@ -51,7 +51,7 @@ class GithubStore {
       method: "GET",
       headers: {
         Accept: "application/vnd.github+json",
-        Authorization: `token ${process.env.VITE_GITHUB_TOKEN}`,
+        Authorization: `${process.env.VITE_GITHUB_TOKEN}`,
       },
     };
     if (filters.page === 1) {
