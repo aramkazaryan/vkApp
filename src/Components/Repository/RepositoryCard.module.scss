@@ -1,0 +1,28 @@
+.RepositoryCard {
+  margin: 20px 0;
+  h5 {
+    margin-top: 0;
+  }
+}
+.CardHeader {
+  margin: 0 !important;
+  height: fit-content;
+  * {
+    margin: 0 !important;
+  }
+}
+.CardFooterInfoIcon {
+  vertical-align: middle;
+  font-size: 20px !important;
+}
+.TopicTags {
+  margin-bottom: 8px;
+}
+.EditButton {
+  font-size: 18px;
+}
+.RepoDeleteButton {
+  cursor: pointer;
+  font-size: 28px;
+  margin-right: 40px;
+}

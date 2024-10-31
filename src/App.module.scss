@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.Container {
+  padding: 20px;
+}
+.ContainerHeader {
+  width: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  position: sticky;
+  top: 0;
+  padding: 10px 0;
+}
